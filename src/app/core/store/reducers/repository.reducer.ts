@@ -9,7 +9,10 @@ export const repositoryFeatureKey = 'repository';
 export interface State extends EntityState<Repository> {
   selectedRepositoryId: number | null;
   isLoading: boolean;
-  query: string;
+  search: {
+    query: string;
+    filter: string;
+  },
 }
 
 export const adapter: EntityAdapter<Repository> = createEntityAdapter<Repository>({
@@ -20,16 +23,18 @@ export const adapter: EntityAdapter<Repository> = createEntityAdapter<Repository
 export const initialState: State = adapter.getInitialState({
   selectedRepositoryId: null,
   isLoading: false,
-  query: '',
+  search: {
+    query: '',
+    filter: '',
+  },
 });
 
 export const reducer = createReducer(
   initialState,
 
-  on(RepositoryActions.loadRepositories, (state, { query }) => ({
+  on(RepositoryActions.loadRepositories, (state) => ({
     ...state,
     isLoading: true,
-    query,
   })),
   on(RepositoryActions.loadRepositoriesSuccess, (state, { repositories }) => ({
     ...adapter.setAll(repositories, state),
@@ -39,6 +44,14 @@ export const reducer = createReducer(
     ...state,
     error,
     isLoading: false,
+  })),
+
+  on(RepositoryActions.setRepositoryFilter, (state, { search }) => ({
+    ...state,
+    search: {
+      ...state.search,
+      ...search,
+    },
   })),
 
   // on(RepositoryActions.createFavoriteRepository, (state) => ({
@@ -65,4 +78,4 @@ export const {
 
 export const getSelectedRepositoryId = (state: State) => state.selectedRepositoryId;
 export const selectIsLoading = (state: State) => state.isLoading;
-export const selectRepositoryQuery = (state: State) => state.query;
+export const selectRepositorySearch = (state: State) => state.search;

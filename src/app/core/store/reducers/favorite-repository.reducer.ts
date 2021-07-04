@@ -1,37 +1,37 @@
 import { Repository } from '@app/shared/models/repository.model';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
-import * as SignUpActions from '../actions/favorite-repository.actions';
+import * as FavoriteRepositoryActions from '../actions/favorite-repository.actions';
 
 export const favoriteRepositoryFeatureKey = 'favorite-repository';
 
 export interface State extends EntityState<Repository> {
-  selectedPositionId: number | null;
+  selectedRepositoryId: number | null;
   isLoading: boolean;
 }
 
 export const adapter: EntityAdapter<Repository> = createEntityAdapter<Repository>({
-  selectId: (position: Repository) => position.id,
+  selectId: (repository: Repository) => repository.id,
   sortComparer: false,
 });
 
 export const initialState: State = adapter.getInitialState({
-  selectedPositionId: null,
+  selectedRepositoryId: null,
   isLoading: false,
 });
 
 export const reducer = createReducer(
   initialState,
 
-  on(SignUpActions.loadFavoriteRepositories, (state) => ({
+  on(FavoriteRepositoryActions.loadFavoriteRepositories, (state) => ({
     ...state,
     isLoading: true,
   })),
-  on(SignUpActions.loadFavoriteRepositoriesSuccess, (state, { repositories }) => ({
+  on(FavoriteRepositoryActions.loadFavoriteRepositoriesSuccess, (state, { repositories }) => ({
     ...adapter.setAll(repositories, state),
     isLoading: false,
   })),
-  on(SignUpActions.loadFavoriteRepositoriesFailure, (state, { error }) => ({
+  on(FavoriteRepositoryActions.loadFavoriteRepositoriesFailure, (state, { error }) => ({
     ...state,
     error,
     isLoading: false,
@@ -45,5 +45,5 @@ export const {
   selectTotal,
 } = adapter.getSelectors();
 
-export const getSelectedPositionId = (state: State) => state.selectedPositionId;
+export const getSelectedRepositoryId = (state: State) => state.selectedRepositoryId;
 export const selectIsLoading = (state: State) => state.isLoading;

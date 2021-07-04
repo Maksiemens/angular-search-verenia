@@ -1,6 +1,14 @@
 <div class="favorite-page">
   <app-repository-cards
+    *ngIf="(favoriteRepositories$ | async)?.length; else empty"
     [repositories]="(favoriteRepositories$ | async)!"
     (toggleToFavorite)="toggleToFavorite($event)"
   ></app-repository-cards>
+  <ng-template #empty>
+    <div class="notification">
+      <p class="notifyction__text">
+        You haven't added any repositories yet...
+      </p>
+    </div>
+  </ng-template>
 </div>

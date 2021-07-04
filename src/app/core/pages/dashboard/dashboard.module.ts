@@ -5,6 +5,9 @@ import { DashboardRoutingModule } from '@app/core/pages/dashboard/dashboard-rout
 import { SearchModule } from '@app/shared/components/search/search.module';
 import { FilterModule } from '@app/shared/components/filter/filter.module';
 import { RepositoryCardsModule } from '@app/shared/components/repository-cards/repository-cards.module';
+import { ProgressSpinnerModule } from '@app/shared/components/progress-spinner/progress-spinner.module';
+
+
 
 @NgModule({
   declarations: [
@@ -16,6 +19,7 @@ import { RepositoryCardsModule } from '@app/shared/components/repository-cards/r
     SearchModule,
     FilterModule,
     RepositoryCardsModule,
+    ProgressSpinnerModule,
   ],
 })
 export class DashboardModule {}

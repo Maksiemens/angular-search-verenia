@@ -20,16 +20,17 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading$ = this.store.pipe(select(fromRoot.selectIsRepositoriesLoading));
-    this.repositories$ = this.store.pipe(select(fromRoot.selectAllRepositories));
+    this.repositories$ = this.store.pipe(select(fromRoot.selectAllAvailableRepositories));
     this.selectOptionList$ = this.store.pipe(select(fromRoot.selectAllRepositoriesLanguage));
   }
 
   searchRepository(query: string): void {
-    this.store.dispatch(fromRoot.loadRepositories({ query }));
+    this.store.dispatch(fromRoot.setRepositoryFilter({ search: { query, filter: '' } }));
+    this.store.dispatch(fromRoot.loadRepositories());
   }
 
-  filterRepository(language: string): void {
-    // this.repositories$ = this.store.pipe(select(fromRoot.selectAllRepositoriesByLanguage(event.value)));
+  filterRepository(filter: string): void {
+    this.store.dispatch(fromRoot.setRepositoryFilter({ search: { filter } }));
   }
 
   toggleToFavorite(repository: Repository): void {

@@ -15,8 +15,16 @@
     ></app-filter>
   </div>
 
-  <app-repository-cards
-    [repositories]="(repositories$ | async)!"
-    (toggleToFavorite)="toggleToFavorite($event)"
-  ></app-repository-cards>
+  <div class="dashboard__content">
+    <app-progress-spinner
+      *ngIf="(isLoading$ | async)!; else loaded"
+    ></app-progress-spinner>
+    <ng-template #loaded>
+      <app-repository-cards
+        [repositories]="(repositories$ | async)!"
+        (toggleToFavorite)="toggleToFavorite($event)"
+      ></app-repository-cards>
+    </ng-template>
+  </div>
+
 </div>

@@ -10,11 +10,11 @@ import { Observable } from 'rxjs';
 export class RepositoryService {
   constructor(private http: HttpClient) {}
 
-  loadRepositories(query: string): Observable<RepositoryResponse> {
+  loadRepositories(search: any): Observable<RepositoryResponse> {
     return this.http.get<RepositoryResponse>(
       `${environment.primaryApiUrl}/search/repositories`,
       {
-        params: { q: query },
+        params: { q: search.query },
       },
     );
   }

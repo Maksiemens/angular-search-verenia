@@ -2,43 +2,44 @@ import { createSelector } from '@ngrx/store';
 import * as fromSignUp from '../reducers/favorite-repository.reducer';
 import { selectSignUpState } from '@app/core/store/reducers';
 
-export const selectIsPositionsLoading = createSelector(
+export const selectIsFavoriteRepositoriesLoading = createSelector(
   selectSignUpState,
   fromSignUp.selectIsLoading
 );
 
-export const selectPositionIds = createSelector(
+export const selectFavoriteRepositoryIds = createSelector(
   selectSignUpState,
   fromSignUp.selectIds
 );
 
-export const selectPositionEntities = createSelector(
+export const selectFavoriteRepositoryEntities = createSelector(
   selectSignUpState,
   fromSignUp.selectEntities
 );
 
-export const selectAllPositions = createSelector(
+export const selectAllFavoriteRepositories = createSelector(
   selectSignUpState,
   fromSignUp.selectAll
 );
 
-export const selectPositionTotal = createSelector(
+export const selectFavoriteRepositoryTotal = createSelector(
   selectSignUpState,
   fromSignUp.selectTotal
 );
 
-export const selectCurrentPositionId = createSelector(
+export const selectCurrentFavoriteRepositoryId = createSelector(
   selectSignUpState,
-  fromSignUp.getSelectedPositionId
+  fromSignUp.getSelectedRepositoryId
 );
 
-export const selectCurrentPosition = createSelector(
-  selectPositionEntities,
-  selectCurrentPositionId,
-  (positionEntities, currentPositionId: number | null) => {
-    if (currentPositionId) {
-      return positionEntities[currentPositionId];
+export const selectCurrentFavoriteRepository = createSelector(
+  selectFavoriteRepositoryEntities,
+  selectCurrentFavoriteRepositoryId,
+  (repositoryEntities, repositoryId: number | null) => {
+    if (repositoryId) {
+      return repositoryEntities[repositoryId];
     }
-    return currentPositionId;
-  }
+
+    return repositoryId;
+  },
 );

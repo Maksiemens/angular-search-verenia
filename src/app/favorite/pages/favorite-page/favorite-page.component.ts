@@ -18,8 +18,8 @@ export class FavoritePageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.isLoading$ = this.store.pipe(select(fromRoot.selectIsRepositoriesLoading));
-    this.favoriteRepositories$ = this.store.pipe(select(fromRoot.selectAllRepositories));
+    this.isLoading$ = this.store.pipe(select(fromRoot.selectIsFavoriteRepositoriesLoading));
+    this.favoriteRepositories$ = this.store.pipe(select(fromRoot.selectAllFavoriteRepositories));
   }
   toggleToFavorite(repository: Repository): void {
     console.log(repository);

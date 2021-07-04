@@ -60,26 +60,27 @@ export const selectAllRepositoriesLanguage = createSelector(
     return allRepositories
       .map((repository: Repository) => repository.language)
       .filter(
-        (item: string, index: number, array: string[]) =>
-          array.indexOf(item) === index && item,
+        (language: string, index: number, languages: string[]) =>
+          languages.indexOf(language) === index && language,
       );
   },
 );
 
-// export const selectAllRepositoriesByLanguage = (language: string) =>
-//   createSelector(selectAllRepositories, (allRepositories: Repository[]) => {
-//     return allRepositories.filter(
-//       (repository: Repository) => repository.language === language,
-//     );
-//   });
+export const selectRepositorySearch = createSelector(
+  selectRepositoryState,
+  fromRepository.selectRepositorySearch,
+);
 
-export const selectAllRepositoriesByLanguage = (language: string) =>
-  createSelector(selectAllRepositories, (allRepositories: Repository[]) => {
-    console.log(language);
-    if (language) {
+export const selectAllAvailableRepositories = createSelector(
+  selectAllRepositories,
+  selectRepositorySearch,
+  (allRepositories: Repository[], repositorySearch) => {
+    if (repositorySearch.filter) {
       return allRepositories.filter(
-        (repository: Repository) => repository.language === language,
+        (repository: Repository) =>
+          repository.language === repositorySearch.filter,
       );
     }
     return allRepositories;
-  });
+  },
+);
