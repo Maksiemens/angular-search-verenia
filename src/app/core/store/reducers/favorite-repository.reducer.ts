@@ -36,6 +36,34 @@ export const reducer = createReducer(
     error,
     isLoading: false,
   })),
+
+  on(FavoriteRepositoryActions.addRepositoryToFavorite, (state) => ({
+    ...state,
+    isLoading: true,
+  })),
+  on(FavoriteRepositoryActions.addRepositoryToFavoriteSuccess, (state, { repository }) => ({
+    ...adapter.addOne(repository, state),
+    isLoading: false,
+  })),
+  on(FavoriteRepositoryActions.addRepositoryToFavoriteFailure, (state, { error }) => ({
+    ...state,
+    error,
+    isLoading: false,
+  })),
+
+  on(FavoriteRepositoryActions.removeRepositoryFromFavorite, (state) => ({
+    ...state,
+    isLoading: true,
+  })),
+  on(FavoriteRepositoryActions.removeRepositoryFromFavoriteSuccess, (state, { repository }) => ({
+    ...adapter.removeOne(repository.id, state),
+    isLoading: false,
+  })),
+  on(FavoriteRepositoryActions.removeRepositoryFromFavoriteFailure, (state, { error }) => ({
+    ...state,
+    error,
+    isLoading: false,
+  })),
 );
 
 export const {
