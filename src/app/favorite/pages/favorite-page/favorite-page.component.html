@@ -1,2 +1,6 @@
-<p>favorite-page works!</p>
-
+<div class="favorite-page">
+  <app-repository-cards
+    [repositories]="(favoriteRepositories$ | async)!"
+    (toggleToFavorite)="toggleToFavorite($event)"
+  ></app-repository-cards>
+</div>

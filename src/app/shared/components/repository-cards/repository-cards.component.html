@@ -1,0 +1,13 @@
+<div class="repository-cards">
+  <ul class="repository-cards__list">
+    <li
+      class="repository-cards__item"
+      *ngFor="let repository of repositories; trackBy: trackByIdFn"
+    >
+      <app-repository-card
+        [repository]="repository"
+        (toggleToFavorite)="onToggleToFavorite($event)"
+      ></app-repository-card>
+    </li>
+  </ul>
+</div>

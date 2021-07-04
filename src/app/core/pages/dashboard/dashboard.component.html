@@ -15,17 +15,8 @@
     ></app-filter>
   </div>
 
-  <div class="repository">
-    <ul class="repository__list">
-      <li
-        class="repository__item"
-        *ngFor="let repository of repositories$ | async; trackBy: trackByIdFn"
-      >
-        <app-repository-card
-          [repository]="repository"
-          (toggleToFavorite)="toggleToFavorite($event)"
-        ></app-repository-card>
-      </li>
-    </ul>
-  </div>
+  <app-repository-cards
+    [repositories]="(repositories$ | async)!"
+    (toggleToFavorite)="toggleToFavorite($event)"
+  ></app-repository-cards>
 </div>

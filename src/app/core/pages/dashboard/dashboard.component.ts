@@ -4,7 +4,6 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Repository } from '@app/shared/models/repository.model';
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'dashboard.component.html',
@@ -20,12 +19,9 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.isLoading$ = this.store.pipe(select(fromRoot.selectIsRepositoriesLoading));
     this.repositories$ = this.store.pipe(select(fromRoot.selectAllRepositories));
     this.selectOptionList$ = this.store.pipe(select(fromRoot.selectAllRepositoriesLanguage));
-  }
-
-  trackByIdFn(index: number, item: Repository): number {
-    return item.id;
   }
 
   searchRepository(query: string): void {
@@ -37,6 +33,7 @@ export class DashboardComponent implements OnInit {
   }
 
   toggleToFavorite(repository: Repository): void {
+    console.log(repository);
     // this.store.dispatch(fromRoot.toggleToFavorite({ repository }));
     // фильтрация происходит по  repository.language
   }

@@ -2,19 +2,6 @@
   display: block;
 }
 
-.repository {
-  margin-top: 25px;
-
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
-    grid-gap: 15px 15px;
-  }
-
-  &__item {
-  }
-}
-
 .interactive {
   display: flex;
   flex-wrap: wrap;
@@ -23,4 +10,3 @@
     margin-right: 15px;
   }
 }
-

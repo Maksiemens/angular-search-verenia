@@ -18,8 +18,8 @@ export class ImgFallbackDirective {
   @HostListener('error', ['$event', '$event.target'])
   loadFallbackOnError(event: Event) {
     const img: HTMLImageElement = <HTMLImageElement>this.eRef.nativeElement;
-    this.renderer.setAttribute(img, 'src', '/assets/img/user_placeholder.svg');
-    this.renderer.setAttribute(img.previousElementSibling, 'srcset', '/assets/img/user_placeholder.svg');
+    this.renderer.setAttribute(img, 'src', 'https://via.placeholder.com/150');
+    this.renderer.setAttribute(img.previousElementSibling, 'srcset', 'https://via.placeholder.com/150');
   }
 }
 @NgModule({
