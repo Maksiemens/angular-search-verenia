@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   public isLoading$!: Observable<boolean>;
   public repositories$!: Observable<Repository[]>;
   public selectOptionList$!: Observable<string[]>;
+  public repositorySearch$!: Observable<any>;
 
   constructor(
     private store: Store<fromRoot.State>,
@@ -22,6 +23,7 @@ export class DashboardComponent implements OnInit {
     this.isLoading$ = this.store.pipe(select(fromRoot.selectIsRepositoriesLoading));
     this.repositories$ = this.store.pipe(select(fromRoot.selectAllAvailableRepositories));
     this.selectOptionList$ = this.store.pipe(select(fromRoot.selectAllRepositoriesLanguage));
+    this.repositorySearch$ = this.store.pipe(select(fromRoot.selectRepositorySearch));
   }
 
   searchRepository(query: string): void {

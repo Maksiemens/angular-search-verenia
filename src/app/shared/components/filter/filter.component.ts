@@ -15,6 +15,7 @@ import { MatSelectChange } from '@angular/material/select';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterComponent implements OnInit {
+  @Input() selected = '';
   @Input() selectOptionList!: string[];
   @Output() selectionChange = new EventEmitter<string>();
 

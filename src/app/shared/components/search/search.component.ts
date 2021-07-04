@@ -26,8 +26,9 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 })
 export class SearchComponent implements OnInit {
   @ViewChild('inputRef', { static: true }) public inputRef!: ElementRef;
-  @Input() isLoading!: boolean;
-  @Output() inputSearch = new EventEmitter<string>();
+  @Input() isLoading = false;
+  @Input() query = '';
+  @Output() search = new EventEmitter<string>();
 
   constructor() {}
 
@@ -47,7 +48,7 @@ export class SearchComponent implements OnInit {
       )
       .subscribe((inputValue: string) => {
         console.log(inputValue);
-        this.inputSearch.emit(inputValue);
+        this.search.emit(inputValue);
       });
   }
 }

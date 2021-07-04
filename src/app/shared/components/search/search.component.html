@@ -12,6 +12,7 @@
       matInput
       placeholder="Angular, Vue..."
       #inputRef
+      [value]="query"
     />
     <mat-icon
       class="search__mat-icon"
@@ -21,4 +22,11 @@
     </mat-icon>
     <mat-hint class="search__mat-hint">Hint</mat-hint>
   </mat-form-field>
+
+  <app-progress-spinner
+    class="search__spinner"
+    *ngIf="isLoading"
+    [diameter]="30"
+    [strokeWidth]="3"
+  ></app-progress-spinner>
 </div>

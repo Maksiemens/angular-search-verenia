@@ -5,6 +5,7 @@
     </mat-label>
     <mat-select
       class="filter__mat-select"
+      [(value)]="selected"
       (selectionChange)="onSelectionChange($event)"
     >
       <mat-option
