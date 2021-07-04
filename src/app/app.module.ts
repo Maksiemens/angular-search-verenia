@@ -6,20 +6,95 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { DOCUMENT } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorInterceptor } from '@app/core/interceptors/error.interceptor';
+import { ResponseInterceptor } from '@app/core/interceptors/response.interceptor';
+
+// !NGRX
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { effects, ROOT_REDUCERS } from '@app/core/store';
+import * as fromRouter from '@app/core/store/reducers/router.reducer';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { EffectsModule } from '@ngrx/effects';
+import { RepositoryCardModule } from '@app/shared/components/repository-card/repository-card.module';
+import { HeaderModule } from '@app/core/components/header/header.module';
+import { FooterModule } from '@app/core/components/footer/footer.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+// !End NGRX
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
+    RepositoryCardModule,
+
+
+
+
+
+
+
+    HeaderModule,
+    FooterModule,
+
+    // Material
+    MatSnackBarModule,
+
+    // !Toast
+    // ToastrModule.forRoot({
+    //   positionClass: 'toast-bottom-right',
+    //   preventDuplicates: true,
+    // }),
+    // !NGRX
+    StoreModule.forRoot(ROOT_REDUCERS, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true,
+        strictActionWithinNgZone: true,
+        strictActionTypeUniqueness: true,
+      },
+    }),
+    StoreDevtoolsModule.instrument({
+      name: 'NGRX Test Task Store App',
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: fromRouter.routerFeatureKey,
+      serializer: fromRouter.CustomSerializer,
+    }),
+    EffectsModule.forRoot(effects),
+    // !ServiceWorker
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    // !Global DOCUMENT
+    {
+      provide: Document,
+      useExisting: DOCUMENT,
+    },
+    // !HTTP_INTERCEPTORS
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ResponseInterceptor,
+      multi: true,
+    },
+  ],
 })
-export class AppModule { }
+export class AppModule {}

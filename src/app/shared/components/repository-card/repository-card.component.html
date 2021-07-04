@@ -1,0 +1,44 @@
+<mat-card class="repository-card">
+  <mat-card-header class="repository-card__header">
+    <img
+      class="repository-card__img"
+      mat-card-avatar
+      [src]="repository.owner.avatar_url"
+      [alt]="repository.name"
+    />
+    <mat-card-title class="repository-card__title">
+      {{ repository.name }}
+    </mat-card-title>
+    <mat-card-subtitle class="repository-card__subtitle">
+      Forks: {{ repository.forks }}
+    </mat-card-subtitle>
+    <mat-card-subtitle class="repository-card__subtitle">
+      Language: {{ repository.language }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="repository-card__content">
+    <p class="repository-card__text">
+      {{ repository.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="repository-card__actions">
+    <a
+      class="repository-card__link"
+      mat-flat-button
+      color="primary"
+      [href]="[repository.owner.html_url]"
+      target="_blank"
+    >
+      Navigate to the project
+    </a>
+    <button
+      class="repository-card__button"
+      mat-flat-button
+      color="warn"
+      (click)="onToggleToFavorite(repository)"
+    >
+      Toggle to favorite
+    </button>
+  </mat-card-actions>
+</mat-card>
+

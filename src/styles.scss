@@ -1,5 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+// @import 'destyle';
+
+@import '~destyle.css/destyle';
+
+
+
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+// //!
+html {
+  height: 100%;
+  height: -webkit-fill-available;
+  scroll-behavior: smooth;
+}
 
 html,
 body {
@@ -8,4 +22,16 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  min-width: 300px;
+  height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }

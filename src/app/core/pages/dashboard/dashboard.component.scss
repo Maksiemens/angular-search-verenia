@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.repository {
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+
+  &__item {
+  }
+}

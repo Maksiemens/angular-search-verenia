@@ -1,0 +1,30 @@
+<div class="dashboard">
+
+  <div class="repository">
+    <ul class="repository__list">
+      <li
+        class="repository__item"
+        *ngFor="let repository of repositories$ | async; trackBy: trackByIdFn"
+      >
+        <app-repository-card
+          [repository]="repository"
+          (toggleToFavorite)="toggleToFavorite($event)"
+        ></app-repository-card>
+      </li>
+    </ul>
+  </div>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Choose an option</mat-label>
+    <mat-select (selectionChange)="repositoryLanguagChange($event)">
+      <mat-option [value]="null">None</mat-option>
+      <mat-option
+        *ngFor="let repositoryLanguage of repositoriesLanguage$ | async; trackBy: trackByIndex"
+        [value]="repositoryLanguage"
+      >
+        {{ repositoryLanguage }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
