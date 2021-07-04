@@ -3,53 +3,43 @@ import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
+  Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-import { Store, select } from '@ngrx/store';
-import * as fromRoot from '@app/core/store';
+import { MatDialog } from '@angular/material/dialog';
+import { PromptDialogComponent } from '@app/shared/components/dialogs/prompt-dialog/prompt-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FavoriteGuard implements CanActivate {
-  constructor(private store: Store<fromRoot.State>) {}
+  private correctPassword = 1234;
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    // return this.store.pipe(
-    //   select(fromRoot.selectIsAuthenticated),
-    //   map((isAuthed) => {
-    //     if (isAuthed) {
-    //       return true;
-    //     } else {
-    //       return false;
-    //     }
-    //   }),
-    //   take(1),
-    // );
+  constructor(
+    private router: Router,
+    private dialog: MatDialog,
+    private snackBar: MatSnackBar,
+  ) {}
 
-    const pass = prompt('Пароль');
-
-
-    if (pass === '1234') {
-      return true;
-    }
-    else {
-      return false;
-    }
-
-    // return this.store.pipe(
-    //   select(fromRoot.selectIsAuthenticated),
-    //   map((isAuthed) => {
-    //     if (isAuthed) {
-    //       return true;
-    //     } else {
-    //       return false;
-    //     }
-    //   }),
-    //   take(1),
-    // );
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot,
+  ): Observable<boolean> | Promise<boolean> | boolean {
+    const dialogRef = this.dialog.open(PromptDialogComponent);
+    return dialogRef.afterClosed().pipe(
+      map((result) => {
+        if (this.correctPassword === result) {
+          this.snackBar.open('Welcome to Favorite', 'Hooray!');
+          return true;
+        } else {
+          this.snackBar.open('Password is incorrect ', 'Ok');
+          this.router.navigate(['/']);
+          return false;
+        }
+      }),
+      take(1),
+    );
   }
-
-  // prompt(title, [default]);
 }

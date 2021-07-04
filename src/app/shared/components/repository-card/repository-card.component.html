@@ -13,7 +13,11 @@
       Forks: {{ repository.forks }}
     </mat-card-subtitle>
     <mat-card-subtitle class="repository-card__subtitle">
-      Language: {{ repository.language }}
+      Language:
+      <ng-container *ngIf="repository.language; else notIndicated">
+        {{ repository.language }}
+      </ng-container>
+      <ng-template #notIndicated>Not indicated</ng-template>
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content class="repository-card__content">

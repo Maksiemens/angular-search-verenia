@@ -1,0 +1,25 @@
+<div class="filter">
+  <mat-form-field class="filter__mat-form-field" appearance="outline">
+    <mat-label class="filter__mat-label">
+      Choose an option
+    </mat-label>
+    <mat-select
+      class="filter__mat-select"
+      (selectionChange)="onSelectionChange($event)"
+    >
+      <mat-option
+        class="filter__mat-option"
+        [value]="''"
+      >
+        None
+      </mat-option>
+      <mat-option
+        class="filter__mat-option"
+        *ngFor="let selectOptionItem of selectOptionList; trackBy: trackByIndex"
+        [value]="selectOptionItem"
+      >
+        {{ selectOptionItem }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

@@ -26,12 +26,13 @@ export const initialState: State = adapter.getInitialState({
 export const reducer = createReducer(
   initialState,
 
-  on(RepositoryActions.loadRepositories, (state) => ({
+  on(RepositoryActions.loadRepositories, (state, { query }) => ({
     ...state,
     isLoading: true,
+    query,
   })),
-  on(RepositoryActions.loadRepositoriesSuccess, (state, { response }) => ({
-    ...adapter.setAll(response.items, state),
+  on(RepositoryActions.loadRepositoriesSuccess, (state, { repositories }) => ({
+    ...adapter.setAll(repositories, state),
     isLoading: false,
   })),
   on(RepositoryActions.loadRepositoriesFailure, (state, { error }) => ({

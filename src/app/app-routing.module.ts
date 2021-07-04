@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NoPreloading, PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NoPreloading, RouterModule, Routes } from '@angular/router';
 import { FavoriteGuard } from '@app/core/guards/favorite.guard';
 
 export const routes: Routes = [

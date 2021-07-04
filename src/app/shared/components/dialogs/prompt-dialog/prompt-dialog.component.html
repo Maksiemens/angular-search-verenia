@@ -1,0 +1,54 @@
+<div class="prompt-dialog">
+  <h3
+    class="prompt-dialog__title"
+    mat-dialog-title
+  >
+    Hi, enter password, please
+  </h3>
+  <div
+    class="prompt-dialog__content"
+    mat-dialog-content
+  >
+    <p class="prompt-dialog__text">
+      Enter to the favorite repositories
+    </p>
+
+    <mat-form-field
+      class="prompt-dialog__mat-form-field"
+      appearance="outline"
+    >
+      <mat-label class="prompt-dialog__mat-label">
+        Password
+      </mat-label>
+      <input
+        class="prompt-dialog__input"
+        type="number"
+        matInput
+        placeholder="1234"
+        [(ngModel)]="inputPassword"
+      />
+    </mat-form-field>
+  </div>
+  <div
+    class="prompt-dialog__actions"
+    mat-dialog-actions
+  >
+    <button
+      class="prompt-dialog__button"
+      mat-flat-button
+      color="warn"
+      (click)="onCancelClick()"
+    >
+      Cancel
+    </button>
+    <button
+      class="prompt-dialog__button"
+      mat-flat-button
+      color="accent"
+      [mat-dialog-close]="inputPassword"
+      cdkFocusInitial
+    >
+      Ok
+    </button>
+  </div>
+</div>

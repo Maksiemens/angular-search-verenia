@@ -1,12 +1,13 @@
 import { createAction, props } from '@ngrx/store';
+import { Repository } from '@app/shared/models/repository.model';
 
 export const loadRepositories = createAction(
   '[Repository/API] Load Repositories',
-
+  props<{ query: string }>()
 );
 export const loadRepositoriesSuccess = createAction(
   '[Repository/API] Load Repositories Success',
-  props<{ response: any }>()
+  props<{ repositories: Repository[] }>()
 );
 export const loadRepositoriesFailure = createAction(
   '[Repository/API] Load Repositories Failure',

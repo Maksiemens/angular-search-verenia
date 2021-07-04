@@ -11,8 +11,3 @@ export const selectError = createSelector(
   selectAuthState,
   fromAuth.selectError,
 );
-
-export const selectIsAuthenticated = createSelector(
-  selectAuthState,
-  fromAuth.selectIsAuthenticated,
-);

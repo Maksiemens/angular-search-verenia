@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,7 +9,6 @@ import { DOCUMENT } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from '@app/core/interceptors/error.interceptor';
 import { ResponseInterceptor } from '@app/core/interceptors/response.interceptor';
-
 // !NGRX
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -18,12 +16,11 @@ import { effects, ROOT_REDUCERS } from '@app/core/store';
 import * as fromRouter from '@app/core/store/reducers/router.reducer';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
-import { RepositoryCardModule } from '@app/shared/components/repository-card/repository-card.module';
+// !End NGRX
 import { HeaderModule } from '@app/core/components/header/header.module';
 import { FooterModule } from '@app/core/components/footer/footer.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-// !End NGRX
-
+import { PromptDialogModule } from '@app/shared/components/dialogs/prompt-dialog/prompt-dialog.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,25 +29,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    RepositoryCardModule,
-
-
-
-
-
-
-
+    // My Modules
     HeaderModule,
     FooterModule,
-
-    // Material
+    // Material Modules
     MatSnackBarModule,
+    PromptDialogModule,
 
-    // !Toast
-    // ToastrModule.forRoot({
-    //   positionClass: 'toast-bottom-right',
-    //   preventDuplicates: true,
-    // }),
     // !NGRX
     StoreModule.forRoot(ROOT_REDUCERS, {
       runtimeChecks: {
