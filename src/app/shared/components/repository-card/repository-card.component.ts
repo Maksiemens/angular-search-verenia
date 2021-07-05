@@ -18,6 +18,10 @@ export class RepositoryCardComponent implements OnInit {
   @Input() repository!: Repository;
   @Output() toggleToFavorite = new EventEmitter<Repository>();
 
+  get buttonText(): string {
+    return this.repository.isFavorite ? 'Remove from' : 'Add to';
+  }
+
   constructor() {}
 
   ngOnInit(): void {}

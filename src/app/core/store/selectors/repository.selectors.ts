@@ -18,13 +18,13 @@ export const selectRepositoryEntities = createSelector(
   fromRepository.selectEntities,
 );
 
-export const selectRepositories = createSelector(
+export const selectAllRepositories = createSelector(
   selectRepositoryState,
   fromRepository.selectAll,
 );
 
-export const selectAllRepositories = createSelector(
-  selectRepositories,
+export const selectRepositories = createSelector(
+  selectAllRepositories,
   (allRepositories) =>
     allRepositories.map((repository: Repository) => ({
       ...repository,
@@ -72,14 +72,11 @@ export const selectRepositorySearch = createSelector(
 );
 
 export const selectAllAvailableRepositories = createSelector(
-  selectAllRepositories,
+  selectRepositories,
   selectRepositorySearch,
   (allRepositories: Repository[], repositorySearch) => {
     if (repositorySearch.filter) {
-      return allRepositories.filter(
-        (repository: Repository) =>
-          repository.language === repositorySearch.filter,
-      );
+      return allRepositories.filter((repository: Repository) => repository.language === repositorySearch.filter);
     }
     return allRepositories;
   },

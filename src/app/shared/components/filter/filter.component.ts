@@ -28,8 +28,6 @@ export class FilterComponent implements OnInit {
   }
 
   onSelectionChange(event: MatSelectChange): void {
-    console.log(event);
-    console.log(event.value);
     this.selectionChange.emit(event.value);
   }
 }

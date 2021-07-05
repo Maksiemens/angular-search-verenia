@@ -36,9 +36,10 @@ export class DashboardComponent implements OnInit {
   }
 
   toggleToFavorite(repository: Repository): void {
-    console.log(repository);
-    // this.store.dispatch(fromRoot.toggleToFavorite({ repository }));
+    repository = {
+      ...repository,
+      isFavorite: true
+    }
     this.store.dispatch(fromRoot.addRepositoryToFavorite({ repository }));
-    // фильтрация происходит по  repository.language
   }
 }

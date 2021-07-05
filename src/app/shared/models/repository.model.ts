@@ -80,4 +80,5 @@ export interface Repository {
   url: string;
   watchers: number;
   watchers_count: number;
+  isFavorite?: boolean;
 }
