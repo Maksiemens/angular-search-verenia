@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1625502138384,
+  "timestamp": 1625512717122,
   "index": "angular-search-verenia/index.html",
   "assetGroups": [
     {
@@ -16,10 +16,10 @@
         "angular-search-verenia/777.523eb36280200e2127f6.js",
         "angular-search-verenia/favicon.ico",
         "angular-search-verenia/index.html",
-        "angular-search-verenia/main.4bb61c7d202d90b689aa.js",
+        "angular-search-verenia/main.57f39997953b32e2b8ec.js",
         "angular-search-verenia/manifest.webmanifest",
         "angular-search-verenia/polyfills.cec050dc3b2b1e3fe90b.js",
-        "angular-search-verenia/runtime.9d4ac351c21d17159a0f.js",
+        "angular-search-verenia/runtime.23205aeef6fa2a59f76d.js",
         "angular-search-verenia/styles.454f409c7430c815c854.css"
       ],
       "patterns": []
@@ -44,7 +44,22 @@
       "patterns": []
     }
   ],
-  "dataGroups": [],
+  "dataGroups": [
+    {
+      "name": "angular-search-verenia",
+      "patterns": [
+        "https:\\/\\/api\\.github\\.com\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 50,
+      "maxAge": 3600000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
   "hashTable": {
     "angular-search-verenia/501.262ff9be0e053190e984.js": "69639b62b36d837a247911a22bfcb568329d5cdc",
     "angular-search-verenia/584.0d01042760286c9c93bc.js": "89219b523b4b4b15a0a5733b8a2b19999c873a76",
@@ -58,11 +73,11 @@
     "angular-search-verenia/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "angular-search-verenia/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "angular-search-verenia/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "angular-search-verenia/index.html": "32973c63885b1b292d1597af26d750a7eedbe3ba",
-    "angular-search-verenia/main.4bb61c7d202d90b689aa.js": "2b32e855e274db0948adab6447f0c5bf247da127",
+    "angular-search-verenia/index.html": "80c02d9919409ae44c3f12356be03e8d8cdaaf40",
+    "angular-search-verenia/main.57f39997953b32e2b8ec.js": "a65e5489bb335ba6e979f6e1c36dbd1fc459aa4a",
     "angular-search-verenia/manifest.webmanifest": "b5ffef9f63a3ce5f488e28151df8e6194073146b",
     "angular-search-verenia/polyfills.cec050dc3b2b1e3fe90b.js": "3097fc8ee5c5f7ff76072eecd1f816dcd6dedeb6",
-    "angular-search-verenia/runtime.9d4ac351c21d17159a0f.js": "e94167b0a341ca658cfea43273173dc49c534fa0",
+    "angular-search-verenia/runtime.23205aeef6fa2a59f76d.js": "e94167b0a341ca658cfea43273173dc49c534fa0",
     "angular-search-verenia/styles.454f409c7430c815c854.css": "c50050f5c872b0ea040cbbd7028a61f7c059ec76"
   },
   "navigationUrls": [
