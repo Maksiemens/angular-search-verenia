@@ -26,5 +26,17 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "angular-search-verenia",
+      "urls": ["https://api.github.com/**"],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 50,
+        "maxAge": "1h",
+        "timeout": "5s"
+      }
+    }
   ]
 }
