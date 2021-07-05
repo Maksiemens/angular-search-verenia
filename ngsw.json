@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1625513269241,
+  "timestamp": 1625518361238,
   "index": "https://maksiemens.github.io/angular-search-verenia/index.html",
   "assetGroups": [
     {
@@ -73,7 +73,7 @@
     "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://maksiemens.github.io/angular-search-verenia/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://maksiemens.github.io/angular-search-verenia/index.html": "8f71d7c00b4b5f7984b11326d5d7a023182bf62e",
+    "https://maksiemens.github.io/angular-search-verenia/index.html": "7e953e1325b512634815fcde1a461af17921c16c",
     "https://maksiemens.github.io/angular-search-verenia/main.57f39997953b32e2b8ec.js": "a65e5489bb335ba6e979f6e1c36dbd1fc459aa4a",
     "https://maksiemens.github.io/angular-search-verenia/manifest.webmanifest": "b5ffef9f63a3ce5f488e28151df8e6194073146b",
     "https://maksiemens.github.io/angular-search-verenia/polyfills.cec050dc3b2b1e3fe90b.js": "3097fc8ee5c5f7ff76072eecd1f816dcd6dedeb6",
