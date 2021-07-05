@@ -33,11 +33,17 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": [".", "./src/style"]
+              "includePaths": [
+                ".",
+                "./src/style"
+              ]
             },
             "scripts": [],
             "serviceWorker": true,
@@ -105,11 +111,18 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }

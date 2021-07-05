@@ -61,6 +61,9 @@ import { PromptDialogModule } from '@app/shared/components/dialogs/prompt-dialog
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   bootstrap: [AppComponent],
   providers: [

@@ -1,8 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-// @import 'destyle';
-
 @import '~destyle.css/destyle';
-
 
 // !reset input[type=number]
 /* Chrome, Safari, Edge, Opera */
@@ -22,9 +18,7 @@ input::-webkit-calendar-picker-indicator {
   -webkit-appearance: none;
 }
 
-
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
-
 
 // //!
 html {
@@ -45,7 +39,6 @@ body {
   height: 100vh;
   min-height: -webkit-fill-available;
 }
-
 
 .container {
   width: 100%;
