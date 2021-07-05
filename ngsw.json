@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1625513023401,
-  "index": "angular-search-verenia/index.html",
+  "timestamp": 1625513269241,
+  "index": "https://maksiemens.github.io/angular-search-verenia/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,16 +11,16 @@
         "ignoreVary": true
       },
       "urls": [
-        "angular-search-verenia/501.262ff9be0e053190e984.js",
-        "angular-search-verenia/584.0d01042760286c9c93bc.js",
-        "angular-search-verenia/777.523eb36280200e2127f6.js",
-        "angular-search-verenia/favicon.ico",
-        "angular-search-verenia/index.html",
-        "angular-search-verenia/main.57f39997953b32e2b8ec.js",
-        "angular-search-verenia/manifest.webmanifest",
-        "angular-search-verenia/polyfills.cec050dc3b2b1e3fe90b.js",
-        "angular-search-verenia/runtime.23205aeef6fa2a59f76d.js",
-        "angular-search-verenia/styles.454f409c7430c815c854.css"
+        "https://maksiemens.github.io/angular-search-verenia/501.262ff9be0e053190e984.js",
+        "https://maksiemens.github.io/angular-search-verenia/584.0d01042760286c9c93bc.js",
+        "https://maksiemens.github.io/angular-search-verenia/777.523eb36280200e2127f6.js",
+        "https://maksiemens.github.io/angular-search-verenia/favicon.ico",
+        "https://maksiemens.github.io/angular-search-verenia/index.html",
+        "https://maksiemens.github.io/angular-search-verenia/main.57f39997953b32e2b8ec.js",
+        "https://maksiemens.github.io/angular-search-verenia/manifest.webmanifest",
+        "https://maksiemens.github.io/angular-search-verenia/polyfills.cec050dc3b2b1e3fe90b.js",
+        "https://maksiemens.github.io/angular-search-verenia/runtime.23205aeef6fa2a59f76d.js",
+        "https://maksiemens.github.io/angular-search-verenia/styles.454f409c7430c815c854.css"
       ],
       "patterns": []
     },
@@ -32,14 +32,14 @@
         "ignoreVary": true
       },
       "urls": [
-        "angular-search-verenia/assets/icons/icon-128x128.png",
-        "angular-search-verenia/assets/icons/icon-144x144.png",
-        "angular-search-verenia/assets/icons/icon-152x152.png",
-        "angular-search-verenia/assets/icons/icon-192x192.png",
-        "angular-search-verenia/assets/icons/icon-384x384.png",
-        "angular-search-verenia/assets/icons/icon-512x512.png",
-        "angular-search-verenia/assets/icons/icon-72x72.png",
-        "angular-search-verenia/assets/icons/icon-96x96.png"
+        "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-128x128.png",
+        "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-144x144.png",
+        "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-152x152.png",
+        "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-192x192.png",
+        "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-384x384.png",
+        "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-512x512.png",
+        "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-72x72.png",
+        "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
@@ -61,24 +61,24 @@
     }
   ],
   "hashTable": {
-    "angular-search-verenia/501.262ff9be0e053190e984.js": "69639b62b36d837a247911a22bfcb568329d5cdc",
-    "angular-search-verenia/584.0d01042760286c9c93bc.js": "89219b523b4b4b15a0a5733b8a2b19999c873a76",
-    "angular-search-verenia/777.523eb36280200e2127f6.js": "8d418e5a210d230c8e80065068a1d40a90fb8093",
-    "angular-search-verenia/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "angular-search-verenia/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "angular-search-verenia/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "angular-search-verenia/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "angular-search-verenia/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "angular-search-verenia/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "angular-search-verenia/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "angular-search-verenia/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "angular-search-verenia/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "angular-search-verenia/index.html": "80c02d9919409ae44c3f12356be03e8d8cdaaf40",
-    "angular-search-verenia/main.57f39997953b32e2b8ec.js": "a65e5489bb335ba6e979f6e1c36dbd1fc459aa4a",
-    "angular-search-verenia/manifest.webmanifest": "b5ffef9f63a3ce5f488e28151df8e6194073146b",
-    "angular-search-verenia/polyfills.cec050dc3b2b1e3fe90b.js": "3097fc8ee5c5f7ff76072eecd1f816dcd6dedeb6",
-    "angular-search-verenia/runtime.23205aeef6fa2a59f76d.js": "e94167b0a341ca658cfea43273173dc49c534fa0",
-    "angular-search-verenia/styles.454f409c7430c815c854.css": "c50050f5c872b0ea040cbbd7028a61f7c059ec76"
+    "https://maksiemens.github.io/angular-search-verenia/501.262ff9be0e053190e984.js": "69639b62b36d837a247911a22bfcb568329d5cdc",
+    "https://maksiemens.github.io/angular-search-verenia/584.0d01042760286c9c93bc.js": "89219b523b4b4b15a0a5733b8a2b19999c873a76",
+    "https://maksiemens.github.io/angular-search-verenia/777.523eb36280200e2127f6.js": "8d418e5a210d230c8e80065068a1d40a90fb8093",
+    "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://maksiemens.github.io/angular-search-verenia/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://maksiemens.github.io/angular-search-verenia/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://maksiemens.github.io/angular-search-verenia/index.html": "8f71d7c00b4b5f7984b11326d5d7a023182bf62e",
+    "https://maksiemens.github.io/angular-search-verenia/main.57f39997953b32e2b8ec.js": "a65e5489bb335ba6e979f6e1c36dbd1fc459aa4a",
+    "https://maksiemens.github.io/angular-search-verenia/manifest.webmanifest": "b5ffef9f63a3ce5f488e28151df8e6194073146b",
+    "https://maksiemens.github.io/angular-search-verenia/polyfills.cec050dc3b2b1e3fe90b.js": "3097fc8ee5c5f7ff76072eecd1f816dcd6dedeb6",
+    "https://maksiemens.github.io/angular-search-verenia/runtime.23205aeef6fa2a59f76d.js": "e94167b0a341ca658cfea43273173dc49c534fa0",
+    "https://maksiemens.github.io/angular-search-verenia/styles.454f409c7430c815c854.css": "c50050f5c872b0ea040cbbd7028a61f7c059ec76"
   },
   "navigationUrls": [
     {
